@@ -30,11 +30,14 @@
                   <el-menu-item index="2-1">服务器列表</el-menu-item>
                 </router-link>
 
-                <el-menu-item index="2-2">选项2</el-menu-item>
+                <router-link to="/Shell">
+                  <el-menu-item index="2-2">终端</el-menu-item>
+                </router-link>
+
               </el-menu-item-group>
-              <el-menu-item-group title="进程">
+              <el-menu-item-group title="任务">
                 <router-link to="/Process">
-                  <el-menu-item index="2-3">正在执行进程</el-menu-item>
+                  <el-menu-item index="2-3">任务进程</el-menu-item>
                 </router-link>
               </el-menu-item-group>
 
@@ -47,8 +50,9 @@
               </template>
               <el-menu-item-group>
                 <template slot="title">脚本</template>
-                <el-menu-item index="3-1">选项1</el-menu-item>
-                <el-menu-item index="3-2">选项2</el-menu-item>
+                <el-menu-item index="3-1">脚本列表</el-menu-item>
+                <el-menu-item index="3-2">脚本钩子</el-menu-item>
+                <el-menu-item index="3-3">定时任务</el-menu-item>
               </el-menu-item-group>
 
             </el-submenu>
@@ -60,8 +64,8 @@
               </template>
               <el-menu-item-group>
                 <template slot="title">服务器</template>
-                <el-menu-item index="4-1">选项1</el-menu-item>
-                <el-menu-item index="4-2">选项2</el-menu-item>
+                <el-menu-item index="4-1">性能监控</el-menu-item>
+                <el-menu-item index="4-2">服务器日志</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
 
@@ -72,13 +76,13 @@
               </template>
               <el-menu-item-group>
                 <template slot="title">角色</template>
-                <el-menu-item index="5-1">选项1</el-menu-item>
-                <el-menu-item index="5-2">选项2</el-menu-item>
+                <el-menu-item index="5-1">权限组</el-menu-item>
+                <el-menu-item index="5-2">权限人</el-menu-item>
               </el-menu-item-group>
               <el-menu-item-group>
                 <template slot="title">权限</template>
-                <el-menu-item index="5-1">选项1</el-menu-item>
-                <el-menu-item index="5-2">选项2</el-menu-item>
+                <el-menu-item index="5-3">ssh认证</el-menu-item>
+                <el-menu-item index="5-4">选项2</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
 
@@ -110,7 +114,7 @@
       </el-container>
 
       <el-footer height="40px">
-
+          {{userInfo}}
       </el-footer>
     </el-container>
   </div>
@@ -118,12 +122,20 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data(){
+      return {
+        userInfo:'admin 登录于 2017-11-20'
+      }
+  }
 }
 </script>
 
 <style>
   a {
     text-decoration: none;
+  }
+  .page{
+    margin-top: 20px;
   }
 </style>

@@ -1,8 +1,7 @@
 <template>
   <el-table
     :data="tableData2"
-    style="width: 100%"
-    :row-class-name="tableRowClassName">
+    style="width: 100%">
     <el-table-column
       fixed
       prop="date"
